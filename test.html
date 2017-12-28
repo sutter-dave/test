@@ -55,6 +55,8 @@
     function createPicker() {
       if (pickerApiLoaded && oauthToken) {
         var view = new google.picker.DocsView(google.picker.ViewId.DOCS);
+        view.setIncludeFolders(true);
+        view.setSelectFolderEnabled(false);
         //view.setMimeTypes("image/png,image/jpeg,image/jpg");
         var picker = new google.picker.PickerBuilder()
             .setAppId(appId)
